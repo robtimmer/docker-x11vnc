@@ -2,10 +2,11 @@
 FROM ubuntu:16.04
 
 # Environment variables
-ENV PASSWORD=123456
+ENV DEBIAN_FRONTEND noninteractive \
+    PASSWORD 123456
 
 # Install dependencies
-RUN	apt-get update && \
+RUN apt-get update && \
     apt-get install -y x11vnc xvfb firefox
 
 # Add entrypoint script
